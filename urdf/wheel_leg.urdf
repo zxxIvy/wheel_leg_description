@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="wheel_leg">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00746094 0.00090321 0.00604838"
+        rpy="0 0 0" />
+      <mass
+        value="16.54216288" />
+      <inertia
+        ixx="0.41748778"
+        ixy="0.00046838"
+        ixz="0.01213606"
+        iyy="0.41356974"
+        iyz="-0.00410317"
+        izz="0.49536783" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_leg_hip1_link">
+    <inertial>
+      <origin
+        xyz="-0.086207 -0.0093081 -0.0071445"
+        rpy="0 0 0" />
+      <mass
+        value="0.53238" />
+      <inertia
+        ixx="0.00028513"
+        ixy="3.881E-05"
+        ixz="-0.00016116"
+        iyy="0.0035718"
+        iyz="-4.2E-07"
+        izz="0.0033255" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_hip1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_hip1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_leg_hip1_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.187 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_leg_hip1_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="left_leg_knee_link">
+    <inertial>
+      <origin
+        xyz="0.06010178 0.00644376 -0.04165431"
+        rpy="0 0 0" />
+      <mass
+        value="0.34933979" />
+      <inertia
+        ixx="0.00107659"
+        ixy="-0.00000993"
+        ixz="0.00150980"
+        iyy="0.00354276"
+        iyz="0.00001318"
+        izz="0.00251609" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_knee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_knee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_leg_knee_joint"
+    type="continuous">
+    <origin
+      xyz="-0.20933 0 -0.016769"
+      rpy="0 0 0" />
+    <parent
+      link="left_leg_hip1_link" />
+    <child
+      link="left_leg_knee_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_leg_wheel_link">
+    <inertial>
+      <origin
+        xyz="0.00020765 0.030642 -0.00012623"
+        rpy="0 0 0" />
+      <mass
+        value="0.28258" />
+      <inertia
+        ixx="0.00029613"
+        ixy="6.6E-07"
+        ixz="-4.4E-07"
+        iyy="0.00053291"
+        iyz="-3.9E-07"
+        izz="0.00029565" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_leg_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.2111 0 -0.13393"
+      rpy="0 0 0" />
+    <parent
+      link="left_leg_knee_link" />
+    <child
+      link="left_leg_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_leg_hip2_link">
+    <inertial>
+      <origin
+        xyz="0.027043 -0.0063817 -0.0015296"
+        rpy="0 0 0" />
+      <mass
+        value="0.12267" />
+      <inertia
+        ixx="6.524E-05"
+        ixy="-3.832E-05"
+        ixz="1.092E-05"
+        iyy="0.0002766"
+        iyz="2.17E-06"
+        izz="0.00025765" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_hip2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_hip2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_leg_hip2_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.187 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_leg_hip2_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_leg_knee_father1_link">
+    <inertial>
+      <origin
+        xyz="-0.052695 -0.0035417 -0.042635"
+        rpy="0 0 0" />
+      <mass
+        value="0.028977" />
+      <inertia
+        ixx="2.2144E-05"
+        ixy="-1.7925E-08"
+        ixz="-3.0736E-05"
+        iyy="6.947E-05"
+        iyz="2.684E-08"
+        izz="4.7639E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_knee_father1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_knee_father1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_leg_knee_father1_joint"
+    type="continuous">
+    <origin
+      xyz="0.11322 0 -0.0064037"
+      rpy="0 0 0" />
+    <parent
+      link="left_leg_hip2_link" />
+    <child
+      link="left_leg_knee_father1_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_leg_knee_father2_link">
+    <inertial>
+      <origin
+        xyz="-0.083089 0.0049101 0.056116"
+        rpy="0 0 0" />
+      <mass
+        value="0.04884" />
+      <inertia
+        ixx="7.9882E-05"
+        ixy="-3.5508E-08"
+        ixz="9.7996E-05"
+        iyy="0.00020875"
+        iyz="3.7273E-08"
+        izz="0.00012937" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_knee_father2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_knee_father2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_leg_knee_father2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.11227 0 -0.074976"
+      rpy="0 0 0" />
+    <parent
+      link="left_leg_knee_father1_link" />
+    <child
+      link="left_leg_knee_father2_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_leg_knee_father3_link">
+    <inertial>
+      <origin
+        xyz="-0.048146 -0.0040765 -0.0038569"
+        rpy="0 0 0" />
+      <mass
+        value="0.020187" />
+      <inertia
+        ixx="1.0501E-06"
+        ixy="0"
+        ixz="-1.949E-06"
+        iyy="2.6055E-05"
+        iyz="0"
+        izz="2.5224E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_knee_father3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/left_leg_knee_father3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_leg_knee_father3_joint"
+    type="continuous">
+    <origin
+      xyz="-0.15952 0 0.12148"
+      rpy="0 0 0" />
+    <parent
+      link="left_leg_knee_father2_link" />
+    <child
+      link="left_leg_knee_father3_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_leg_hip1_link">
+    <inertial>
+      <origin
+        xyz="-0.086207 0.010308 -0.0071445"
+        rpy="0 0 0" />
+      <mass
+        value="0.53238" />
+      <inertia
+        ixx="0.00028513"
+        ixy="-3.881E-05"
+        ixz="-0.00016116"
+        iyy="0.0035718"
+        iyz="4.2E-07"
+        izz="0.0033255" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_hip1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_hip1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_leg_hip1_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.188 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_leg_hip1_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_leg_knee_link">
+    <inertial>
+      <origin
+        xyz="0.06010178 -0.00544376 -0.04165431"
+        rpy="0 0 0" />
+      <mass
+        value="0.34934" />
+      <inertia
+        ixx="0.00107659"
+        ixy="9.93E-06"
+        ixz="0.0015098"
+        iyy="0.00354276"
+        iyz="-1.318E-05"
+        izz="0.00251609" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_knee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_knee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_leg_knee_joint"
+    type="continuous">
+    <origin
+      xyz="-0.20933 0 -0.016769"
+      rpy="0 0 0" />
+    <parent
+      link="right_leg_hip1_link" />
+    <child
+      link="right_leg_knee_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_leg_wheel_link">
+    <inertial>
+      <origin
+        xyz="0.00019389 -0.02535964 -0.00010647"
+        rpy="0 0 0" />
+      <mass
+        value="0.36500947" />
+      <inertia
+        ixx="0.00033416"
+        ixy="-4.9E-07"
+        ixz="-4.8E-07"
+        iyy="0.00055017"
+        iyz="2.6E-07"
+        izz="0.00033351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_leg_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.2111 0 -0.13393"
+      rpy="0 0 0" />
+    <parent
+      link="right_leg_knee_link" />
+    <child
+      link="right_leg_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_leg_hip2_link">
+    <inertial>
+      <origin
+        xyz="0.027043 0.0073817 -0.0015296"
+        rpy="0 0 0" />
+      <mass
+        value="0.12267" />
+      <inertia
+        ixx="6.524E-05"
+        ixy="3.832E-05"
+        ixz="1.092E-05"
+        iyy="0.0002766"
+        iyz="-2.17E-06"
+        izz="0.00025765" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_hip2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_hip2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_leg_hip2_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.188 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_leg_hip2_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_leg_knee_father1_link">
+    <inertial>
+      <origin
+        xyz="-0.052695 0.0045417 -0.042635"
+        rpy="0 0 0" />
+      <mass
+        value="0.028977" />
+      <inertia
+        ixx="2.2144E-05"
+        ixy="1.7925E-08"
+        ixz="-3.0736E-05"
+        iyy="6.947E-05"
+        iyz="-2.684E-08"
+        izz="4.7639E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_knee_father1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_knee_father1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_leg_knee_father1_joint"
+    type="continuous">
+    <origin
+      xyz="0.11322 0 -0.0064037"
+      rpy="0 0 0" />
+    <parent
+      link="right_leg_hip2_link" />
+    <child
+      link="right_leg_knee_father1_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_leg_knee_father2_link">
+    <inertial>
+      <origin
+        xyz="-0.083089 -0.0039101 0.056116"
+        rpy="0 0 0" />
+      <mass
+        value="0.04884" />
+      <inertia
+        ixx="7.9882E-05"
+        ixy="3.5508E-08"
+        ixz="9.7996E-05"
+        iyy="0.00020875"
+        iyz="-3.7273E-08"
+        izz="0.00012937" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_knee_father2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_knee_father2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_leg_knee_father2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.11227 0 -0.074976"
+      rpy="0 0 0" />
+    <parent
+      link="right_leg_knee_father1_link" />
+    <child
+      link="right_leg_knee_father2_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right_leg_knee_father3_link">
+    <inertial>
+      <origin
+        xyz="-0.048146 0.0050765 -0.0038569"
+        rpy="0 0 0" />
+      <mass
+        value="0.020187" />
+      <inertia
+        ixx="1.0501E-06"
+        ixy="0"
+        ixz="-1.949E-06"
+        iyy="2.6055E-05"
+        iyz="0"
+        izz="2.5224E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_knee_father3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf/meshes/right_leg_knee_father3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_leg_knee_father3_joint"
+    type="continuous">
+    <origin
+      xyz="-0.15952 0 0.12148"
+      rpy="0 0 0" />
+    <parent
+      link="right_leg_knee_father2_link" />
+    <child
+      link="right_leg_knee_father3_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+</robot>
